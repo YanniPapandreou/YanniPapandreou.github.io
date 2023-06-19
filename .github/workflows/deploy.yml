@@ -2,14 +2,13 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
       - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         persist-credentials: false
     # NOTE: Python is necessary for the pre-rendering (minification) step
@@ -39,8 +38,8 @@ jobs:
             Pkg.activate("."); Pkg.instantiate();
             optimize()'
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        SSH: ${{ secrets.DEPLOY_KEY }}
-        BRANCH: gh-pages
-        FOLDER: __site
+        folder: __site
+        branch: gh-pages
+        ssh-key: ${{ secrets.DEPLOY_KEY }}
