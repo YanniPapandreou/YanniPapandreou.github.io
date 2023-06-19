@@ -1,0 +1,11 @@
+<nav class="navigation">
+  {{for (title, link) in nav_items}}
+      <a href="{{link}}">{{title}}</a>
+  {{end}}
+  <div class="social-media">
+    <a style="color: #ffffff;" href="{{social_github}}" target="_blank"><i class="fab fa-github"></i></a>
+    <a style="color: #ffffff;" href="{{social_linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a style="color: #ffffff" href="mailto:{{social_email}}"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+</nav>
+

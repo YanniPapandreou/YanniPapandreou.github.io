@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Added my own icon kit from font awesome and academicons  -->
+  <script src="https://kit.fontawesome.com/0587c13834.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+ 
+
+
+  {{if hasmath}} {{insert head_katex.html }} {{end}}
+  {{if hascode}} {{insert head_highlight.html }} {{end}}
+  {{insert head_fontawesome.html}}
+  {{insert style.html}}
+  {{isdef title}} <title>{{fill title}}</title> {{end}}
+</head>
+<body>
+  <header>
+    <a class="title" href="/"><h2>{{author_short}}</h2></a>
+    {{ insert navbar.html }}
+  </header>
+  <main>
+    <!-- Content appended here -->
