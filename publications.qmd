@@ -1,0 +1,38 @@
+---
+title: "Publications"
+---
+
+::: {.panel-tabset}
+
+### Journal Articles
+
+* [Theoretical Guarantees for the Statistical Finite Element Method](https://epubs.siam.org/doi/10.1137/21M1463963)
+  + **SIAM/ASA Journal on Uncertainty Quantification**
+  + **Authors**: Yanni Papandreou, Jon Cockayne, Mark Girolami, Andrew B. Duncan
+  + 🔗 **PDF**: A pdf version ({{< ai arxiv >}}) can be found [here](https://arxiv.org/pdf/2111.07691.pdf).
+  + 🔗 **Code**: The code for this paper is publicly available [here](https://github.com/YanniPapandreou/statFEM_analysis).
+
+<!-- TODO: fix article citation -->
+
+### Conference Papers
+* [Random Grid Neural Processes for Parametric Partial Differential Equations](https://proceedings.mlr.press/v202/vadeboncoeur23a.html)
+  + **Proceedings of the 40th International Conference on Machine Learning**
+  + **Authors**: Arnaud Vadeboncoeur, Ieva Kazlauskaite, Yanni Papandreou, Fehmi Cirak, Mark Girolami, Ömer Deniz Akyildiz
+  + 🔗 **PDF**: A version can be found [here](https://proceedings.mlr.press/v202/vadeboncoeur23a/vadeboncoeur23a.pdf).
+
+
+### Theses
+
+* [Bayesian uncertainty quantification for PDE models: new perspectives on inference and dimension reduction](https://spiral.imperial.ac.uk/handle/10044/1/108763)
+  + **PhD Thesis | Imperial College London**
+  + **Supervisors**: Dr Andrew B. Duncan, Dr Jon Cockayne
+  + 🔗 **PDF**: A version can be found [here](https://spiral.imperial.ac.uk/bitstream/10044/1/108763/1/Papandreou-Y-2023-PhD-Thesis.pdf).
+  + 🔗 **Code**: Code associated with this thesis can be found at the following GitHub repositories:
+    + [statFEM_analysis](https://github.com/YanniPapandreou/statFEM_analysis)
+    + [grassgp](https://github.com/YanniPapandreou/grassgp)
+* [Kernel-Based Inference Methods for Ordinary Differential Equations]()
+  + **MSc Thesis | Imperial College London**
+  + **Supervisors**: Dr Andrew B. Duncan
+  + 🔗 **PDF/Code**: A pdf version of this thesis, together with some code, can be found in the GitHub repository [here](https://github.com/YanniPapandreou/Kernel-based-inference-ODEs).
+
+:::

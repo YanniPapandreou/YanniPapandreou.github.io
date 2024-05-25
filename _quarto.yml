@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "YP"
+  favicon: assets/favicon.png
+  navbar:
+    right:
+      - about.qmd
+      - publications.qmd
+      - icon: github
+        href: https://github.com/yannipapandreou/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/yanni-papandreou/
+      - icon: envelope-fill
+        href: mailto:ypandreou7@gmail.com
+format:
+  html:
+    highlight-style: dracula
+    # link-external-icon: true
+    link-external-newwindow: true
+    # monobackgroundcolor: grey
+    # theme: [cosmo, theme-dark.scss]
+    theme:
+      light: [cosmo, theme-light.scss]
+      dark: [cosmo, theme-dark.scss]
+    css: styles.css
+
+
+

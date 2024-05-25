@@ -1,0 +1,65 @@
+---
+title: "About Me"
+image: assets/avatar.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/yannipapandreou/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yanni-papandreou/
+    - icon: envelope-fill
+      text: Email
+      href: mailto:ypapandreou7@gmail.com
+
+---
+
+
+I've been working as a Quantitative Researcher at [Bayforest Technologies](https://bayforest.ai/) since September 2023.
+
+Before that I completed my PhD in Mathematics at [Imperial College London](https://www.imperial.ac.uk/) under the joint supervision of [Dr Andrew Duncan](https://www.ma.imperial.ac.uk/~aduncan/) and [Dr Jon Cockayne](https://www.southampton.ac.uk/people/5z6tk6/doctor-jon-cockayne). My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.
+
+
+::: {.panel-tabset}
+
+## Present Status
+
+💻 **Quantitative Researcher** | [Bayforest Technologies](https://bayforest.ai/) | September 2023 - Present
+
+🏠 Based in **London**
+
+## Experience
+
+💻 **AI Research Intern** | [Arabesque AI](https://www.arabesque.com/ai/) | August 2021 - November 2021
+
+📖 **Mathematics Tutor** | [Keystone Tutors](https://www.keystonetutors.com/) | December 2019 - September 2023
+
+📖 **Graduate Teaching Assistant (GTA)** | [Imperial College London](https://www.imperial.ac.uk/) | October 2019 - September 2023
+
+## Education
+
+🎓 **PhD in Mathematics** | Imperial College London | October 2019 - September 2023
+
+🎓 **MSc in Statistics** | Imperial College London | September 2018 - September 2019
+
+🎓 **BA in Mathematics** | University of Cambridge | October 2015 - June 2018
+
+## Interests
+
+💻 **Programming** | Nix | Python | Julia | R
+
+📚 **Mathematics** | Bayesian Statistics | Physics-informed ML | Kernel-based methods
+
+## Languages
+
+💬 **English** (native) | **Greek** (conversational)
+
+## Countries
+
+🌐 **UK** (Current; ≈8 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
+
+:::
+
+{{< downloadthis ./assets/CV.pdf label="Download my CV" type=primary dname="CV_Yanni_Papandreou">}}
