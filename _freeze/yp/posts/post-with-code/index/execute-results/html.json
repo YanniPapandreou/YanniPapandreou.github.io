@@ -1,0 +1,12 @@
+{
+  "hash": "6f3a8322f0d458b8bb49f0d882f4d1a9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Post With Code\ndate: '2024-04-04'\ncategories:\n  - news\n  - code\n  - analysis\nimage: image.jpg\nformat:\n  html:\n    code-fold: true\ndraft: true\n---\n\nThis is a post with executable code.\n\n::: {#cell-fig-polar .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'}\n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![A line plot on a polar axis](index_files/figure-html/fig-polar-output-1.png){#fig-polar width=450 height=439}\n:::\n:::\n\n\nThis is another code block:\n\n::: {#5b6c4182 .cell execution_count=2}\n``` {.python .cell-code}\nimport xarray as xr\ndata = xr.DataArray(np.random.randn(2, 3), dims=(\"x\", \"y\"), coords={\"x\": [10, 20]})\nprint(data + 1)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n<xarray.DataArray (x: 2, y: 3)> Size: 48B\narray([[ 0.58352477,  0.60309493, -0.6092364 ],\n       [-0.75396755, -0.17437505,  0.10875558]])\nCoordinates:\n  * x        (x) int64 16B 10 20\nDimensions without coordinates: y\n```\n:::\n:::\n\n\n::: {#1be237fe .cell execution_count=3}\n``` {.python .cell-code}\nimport pandas as pd\n\nprint(pd.DataFrame())\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nEmpty DataFrame\nColumns: []\nIndex: []\n```\n:::\n:::\n\n\n::: {#334244e3 .cell execution_count=4}\n``` {.python .cell-code}\nfrom scipy.special import gamma\n\ngamma([0, 0.5, 1, 5])\n```\n\n::: {.cell-output .cell-output-display execution_count=4}\n```\narray([        inf,  1.77245385,  1.        , 24.        ])\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
