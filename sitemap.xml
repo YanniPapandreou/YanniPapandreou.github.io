@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YanniPapandreou.github.io/experience.html</loc>
-    <lastmod>2024-04-06T23:26:01.721Z</lastmod>
+    <loc>https://YanniPapandreou.github.io/index.html</loc>
+    <lastmod>2024-05-25T13:29:37.820Z</lastmod>
+  </url>
+  <url>
+    <loc>https://YanniPapandreou.github.io/publications.html</loc>
+    <lastmod>2024-05-25T13:36:48.894Z</lastmod>
   </url>
   <url>
     <loc>https://YanniPapandreou.github.io/about.html</loc>
     <lastmod>2024-05-25T13:29:37.812Z</lastmod>
-  </url>
-  <url>
-    <loc>https://YanniPapandreou.github.io/publications.html</loc>
-    <lastmod>2024-05-25T13:29:37.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://YanniPapandreou.github.io/index.html</loc>
-    <lastmod>2024-05-25T13:29:37.820Z</lastmod>
   </url>
 </urlset>

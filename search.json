@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "experience.html",
-    "href": "experience.html",
-    "title": "Experience",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "YP",
     "section": "",
-    "text": "AI Research Intern\n\nArabesque AI\n\nAugust 2021 - November 2021 | London, UK\nResearch internship focussing on Market Regime Detection:\n\nInvestigated approaches using Change-Point Detection (CPD) algorithms\n\n\n\n\n\nMathematics Tutor\n\nKeystone Tutors\n\nDecember 2019 - Present | London, UK\nMathematics tutor for GCSEs, A Levels, STEP, Oxbridge admissions, and undergraduate levels\n\n\n\n\nGraduate Teaching Assistant (GTA)\n\nImperial College London\n\nOctober 2019 - Present | London, UK"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I’ve been working as a Quantitative Researcher at Bayforest Technologies since September 2023.\nBefore that I completed my PhD in Mathematics at Imperial College London under the joint supervision of Dr Andrew Duncan and Dr Jon Cockayne. My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.\n\nPresent StatusExperienceEducationInterestsLanguagesCountries\n\n\n💻 Quantitative Researcher | Bayforest Technologies | September 2023 - Present\n🏠 Based in London\n\n\n💻 AI Research Intern | Arabesque AI | August 2021 - November 2021\n📖 Mathematics Tutor | Keystone Tutors | December 2019 - September 2023\n📖 Graduate Teaching Assistant (GTA) | Imperial College London | October 2019 - September 2023\n\n\n🎓 PhD in Mathematics | Imperial College London | October 2019 - September 2023\n🎓 MSc in Statistics | Imperial College London | September 2018 - September 2019\n🎓 BA in Mathematics | University of Cambridge | October 2015 - June 2018\n\n\n💻 Programming | Nix | Python | Julia | R\n📚 Mathematics | Bayesian Statistics | Physics-informed ML | Kernel-based methods\n\n\n💬 English (native) | Greek (conversational)\n\n\n🌐 UK (Current; ≈8 years) | Cyprus (≈11 years) | USA (≈10 years)\n\n\n\n Download my CV"
+    "text": "Hi there, I’m Yanni 👋. On this site I will post about topics I find interesting in Mathematics, Computer Science, Machine Learning, and more!\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications.html",
@@ -21,10 +14,10 @@
     "text": "Journal ArticlesConference PapersTheses\n\n\n\nTheoretical Guarantees for the Statistical Finite Element Method\n\nSIAM/ASA Journal on Uncertainty Quantification\nAuthors: Yanni Papandreou, Jon Cockayne, Mark Girolami, Andrew B. Duncan\n🔗 PDF: A pdf version () can be found here.\n🔗 Code: The code for this paper is publicly available here.\n\n\n\n\n\n\nRandom Grid Neural Processes for Parametric Partial Differential Equations\n\nProceedings of the 40th International Conference on Machine Learning\nAuthors: Arnaud Vadeboncoeur, Ieva Kazlauskaite, Yanni Papandreou, Fehmi Cirak, Mark Girolami, Ömer Deniz Akyildiz\n🔗 PDF: A version can be found here.\n\n\n\n\n\nBayesian uncertainty quantification for PDE models: new perspectives on inference and dimension reduction\n\nPhD Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan, Dr Jon Cockayne\n🔗 PDF: A version can be found here.\n🔗 Code: Code associated with this thesis can be found at the following GitHub repositories:\n\nstatFEM_analysis\ngrassgp\n\n\nKernel-Based Inference Methods for Ordinary Differential Equations\n\nMSc Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan\n🔗 PDF/Code: A pdf version of this thesis, together with some code, can be found in the GitHub repository here."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "YP",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "Hi there, I’m Yanni 👋. On this site I will post about topics I find interesting in Mathematics, Computer Science, Machine Learning, and more!\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "I’ve been working as a Quantitative Researcher at Bayforest Technologies since September 2023.\nBefore that I completed my PhD in Mathematics at Imperial College London under the joint supervision of Dr Andrew Duncan and Dr Jon Cockayne. My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.\n\nPresent StatusExperienceEducationInterestsLanguagesCountries\n\n\n💻 Quantitative Researcher | Bayforest Technologies | September 2023 - Present\n🏠 Based in London\n\n\n💻 AI Research Intern | Arabesque AI | August 2021 - November 2021\n📖 Mathematics Tutor | Keystone Tutors | December 2019 - September 2023\n📖 Graduate Teaching Assistant (GTA) | Imperial College London | October 2019 - September 2023\n\n\n🎓 PhD in Mathematics | Imperial College London | October 2019 - September 2023\n🎓 MSc in Statistics | Imperial College London | September 2018 - September 2019\n🎓 BA in Mathematics | University of Cambridge | October 2015 - June 2018\n\n\n💻 Programming | Nix | Python | Julia | R\n📚 Mathematics | Bayesian Statistics | Physics-informed ML | Kernel-based methods\n\n\n💬 English (native) | Greek (conversational)\n\n\n🌐 UK (Current; ≈8 years) | Cyprus (≈11 years) | USA (≈10 years)\n\n\n\n Download my CV"
   }
 ]
