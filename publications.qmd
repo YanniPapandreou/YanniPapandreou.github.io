@@ -2,7 +2,7 @@
 title: "Publications"
 ---
 
-::: {.panel-tabset}
+<!-- ::: {.panel-tabset} -->
 
 ### Journal Articles
 
@@ -35,4 +35,4 @@ title: "Publications"
   + **Supervisors**: Dr Andrew B. Duncan
   + 🔗 **PDF/Code**: A pdf version of this thesis, together with some code, can be found in the GitHub repository [here](https://github.com/YanniPapandreou/Kernel-based-inference-ODEs).
 
-:::
+<!-- ::: -->
