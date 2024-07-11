@@ -1,14 +1,14 @@
 ---
 title: "YP"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+# listing:
+#   contents: posts
+#   sort: "date desc"
+#   type: default
+#   categories: true
+#   sort-ui: false
+#   filter-ui: false
 page-layout: full
 title-block-banner: true
 ---
 
-Hi there, I'm Yanni 👋. On this site I will post about topics I find interesting in Mathematics, Computer Science, Machine Learning, and more!
+Hi there, I'm Yanni 👋. I'm a statistican and you can find more about me [here](./about.qmd).
