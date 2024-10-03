@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://YanniPapandreou.github.io/index.html</loc>
-    <lastmod>2024-07-11T13:09:45.142Z</lastmod>
+    <lastmod>2024-10-03T09:41:26.945Z</lastmod>
   </url>
   <url>
     <loc>https://YanniPapandreou.github.io/publications.html</loc>
@@ -11,5 +11,9 @@
   <url>
     <loc>https://YanniPapandreou.github.io/about.html</loc>
     <lastmod>2024-06-06T14:38:16.725Z</lastmod>
+  </url>
+  <url>
+    <loc>https://YanniPapandreou.github.io/posts/bitwise_ops_r/index.html</loc>
+    <lastmod>2024-10-03T09:42:12.616Z</lastmod>
   </url>
 </urlset>

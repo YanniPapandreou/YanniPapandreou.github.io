@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "YP",
     "section": "",
-    "text": "Hi there, I’m Yanni 👋. I’m a statistician and you can find more about me here."
+    "text": "Hi there, I’m Yanni 👋. I’m a statistician and you can find more about me here.\nI will be posting on topics I find interesting here. Any mistakes contained in such posts are mine and mine alone.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBitwise Logical Operations in R\n\n\n\n\n\n\nR\n\n\nProgramming\n\n\n\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications.html",
@@ -19,5 +19,26 @@
     "title": "About Me",
     "section": "",
     "text": "I’ve been working as a Quantitative Researcher at Bayforest Technologies since September 2023.\nBefore that I completed my PhD in Mathematics at Imperial College London under the joint supervision of Dr Andrew Duncan and Dr Jon Cockayne. My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.\n\nPresent StatusExperienceEducationInterestsLanguagesCountries\n\n\n💻 Quantitative Researcher | Bayforest Technologies | September 2023 - Present\n🏠 Based in London\n\n\n💻 AI Research Intern | Arabesque AI | August 2021 - November 2021\n📖 Mathematics Tutor | Keystone Tutors | December 2019 - September 2023\n📖 Graduate Teaching Assistant (GTA) | Imperial College London | October 2019 - September 2023\n\n\n🎓 PhD in Mathematics | Imperial College London | October 2019 - September 2023\n🎓 MSc in Statistics | Imperial College London | September 2018 - September 2019\n🎓 BA in Mathematics | University of Cambridge | October 2015 - June 2018\n\n\n💻 Programming | Nix | Python | Julia | R\n📚 Mathematics | Bayesian Statistics | Physics-informed ML | Kernel-based methods\n\n\n💬 English (native) | Greek (conversational)\n\n\n🌐 UK (Current; ≈8 years) | Cyprus (≈11 years) | USA (≈10 years)\n\n\n\n Download my CV"
+  },
+  {
+    "objectID": "posts/bitwise_ops_r/index.html",
+    "href": "posts/bitwise_ops_r/index.html",
+    "title": "Bitwise Logical Operations in R",
+    "section": "",
+    "text": "Recently I’ve been refreshing my knowledge of R by going over problems from the R track on Exercism. A recurring technique needed1 for the problems in these tracks is to be able to convert integers into their binary representation."
+  },
+  {
+    "objectID": "posts/bitwise_ops_r/index.html#explanation",
+    "href": "posts/bitwise_ops_r/index.html#explanation",
+    "title": "Bitwise Logical Operations in R",
+    "section": "Explanation",
+    "text": "Explanation\nLet’s now explain how this function works. The key idea of this function is to use the bitwise and operation to extract the \\(i^{\\text{th}}\\) digit of the binary representation of \\(n\\) as follows:\n\nget_binary_digit &lt;- function(n, i){\n  out &lt;- bitwAnd(n, 2 ^ (i - 1))\n  as.integer(out &gt; 0)\n}\n\nThis works because we perform a bitwise and operation on the binary representations of \\(n\\) with the binary representation of the appropriate power of 2. The binary representation of \\(2^{i - 1}\\) has a single 1 in the \\(i^{\\text{th}}\\) position and so performing this bitwise and operation with the binary representation of \\(n\\) will result in a binary vector with all zeros apart from perhaps a single 1 located in the \\(i^{\\text{th}}\\) position if and only if there is a 1 in the representation of \\(n\\). Since the bitwAnd function returns the result not as a binary vector but as the integer the binary vector represents we convert the result to the appropriate binary digit by testing if the output is positive6.\n\n\n\n\n\n\nNote\n\n\n\nThis is akin to finding the \\(i^{\\text{th}}\\) coordinate of a vector \\(\\mathbf{v}\\) in a given orthogonal basis \\(\\{\\mathbf{e}_{i}\\}_{i}\\) by taking the dot product of the vector with the \\(i^{\\text{th}}\\) basis vector:\n\\[\n\\mathbf{v} = \\sum_{i} v_{i} \\mathbf{v}_{i}\n\\]\nwhere the coefficient \\(v_{i}\\) is given by:\n\\[\nv_{i} = \\langle \\mathbf{v}, \\mathbf{e}_{i}\\rangle\n\\]\nIn the binary representation problem above the binary representations of powers of 2 can be thought of as the orthogonal basis - in fact as a sort of canonical basis for the representation.\n\n\nThus, the line as.integer(bitwAnd(n, 2 ^ (limit:0)) &gt; 0) in Listing 2 simply extracts all the binary digits of \\(n\\) in a vectorised fashion7."
+  },
+  {
+    "objectID": "posts/bitwise_ops_r/index.html#footnotes",
+    "href": "posts/bitwise_ops_r/index.html#footnotes",
+    "title": "Bitwise Logical Operations in R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIndeed in many of the tracks and in computer science in general.↩︎\nSince \\(17 = 16 + 1 = 2^4 + 2^0\\).↩︎\nTo see the full docs run ?bitwAnd in an R console.↩︎\nWith the convention that the bit 1 represents TRUE and 0 represents FALSE.↩︎\nNote that the binary representation is left padded with zeros so the lengths match.↩︎\nThe output will be positive if and only if the \\(i^{\\text{th}}\\) binary digit was a 1.↩︎\nThe defintion of limit as floor(log2(n)) is simply 1 less than the number of binary digits in \\(n\\).↩︎"
   }
 ]
