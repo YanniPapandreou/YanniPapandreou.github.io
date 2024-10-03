@@ -1,14 +1,16 @@
 ---
 title: "YP"
-# listing:
-#   contents: posts
-#   sort: "date desc"
-#   type: default
-#   categories: true
-#   sort-ui: false
-#   filter-ui: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
 page-layout: full
 title-block-banner: true
 ---
 
-Hi there, I'm Yanni 👋. I'm a statistician and you can find more about me [here](./about.qmd).
+Hi there, I'm Yanni 👋. I'm a statistician and you can find more about me [here](./about.qmd). 
+
+I will be posting on topics I find interesting here. Any mistakes contained in such posts are mine and mine alone.

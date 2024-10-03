@@ -40,6 +40,17 @@
               seaborn
               xarray
             ];
+            rWrapper = pkgs.rWrapper;
+            radianWrapper = pkgs.radianWrapper;
+            Rpackages = with pkgs.rPackages; [
+              glue
+              gt
+              microbenchmark
+              rmarkdown
+              tidyverse
+            ];
+            R-with-my-packages = rWrapper.override{ packages = Rpackages; };
+            radian-with-my-packages = radianWrapper.override{ packages = Rpackages; };
           in
           pkgs.mkShell {
             # The Nix packages provided in the environment
@@ -47,6 +58,10 @@
               quarto
               # Python plus helper tools
               (python311.withPackages my-python-packages)
+              R-with-my-packages
+              radian-with-my-packages
+              markdown-oxide
+              marksman
             ];
 
             # buildInputs = with pkgs; [
@@ -56,6 +71,7 @@
 
             shellHook = ''
               export QUARTO_PYTHON=$(which python)
+              export QUARTO_R=$(which Rscript)
             '';
           };
       });

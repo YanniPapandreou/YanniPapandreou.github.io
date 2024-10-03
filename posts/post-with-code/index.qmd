@@ -1,0 +1,52 @@
+---
+title: "Post With Code"
+# author: "Harlow Malloc"
+date: "2024-04-04"
+categories: [news, code, analysis]
+image: "image.jpg"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+draft: true
+---
+
+This is a post with executable code.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'}
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+This is another code block:
+
+```{python}
+import xarray as xr
+data = xr.DataArray(np.random.randn(2, 3), dims=("x", "y"), coords={"x": [10, 20]})
+print(data + 1)
+```
+
+```{python}
+import pandas as pd
+
+print(pd.DataFrame({"A":[1,2,3],"B":["a","b","b"]}))
+```
+
+```{python}
+from scipy.special import gamma
+
+gamma([0, 0.5, 1, 5])
+```
