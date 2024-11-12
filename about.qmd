@@ -16,8 +16,9 @@ about:
 
 ---
 
+I've just joined [Moody's RMS](https://www.rms.com/) as a Climate Hazard Modeller on the Tropical Cyclone team.
 
-I've been working as a Quantitative Researcher at [Bayforest Technologies](https://bayforest.ai/) since September 2023.
+Previously, I worked as a Quantitative Researcher at [Bayforest Technologies](https://bayforest.ai/).
 
 Before that I completed my PhD in Mathematics at [Imperial College London](https://www.imperial.ac.uk/) under the joint supervision of [Dr Andrew Duncan](https://www.ma.imperial.ac.uk/~aduncan/) and [Dr Jon Cockayne](https://www.southampton.ac.uk/people/5z6tk6/doctor-jon-cockayne). My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.
 
@@ -26,11 +27,13 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 
 ## Present Status
 
-💻 **Quantitative Researcher** | [Bayforest Technologies](https://bayforest.ai/) | September 2023 - Present
+💻 **Climate Hazard Modeller** | [Moody's RMS](https://www.rms.com/) | November 2024 - Present
 
 🏠 Based in **London**
 
 ## Experience
+
+💻 **Quantitative Researcher** | [Bayforest Technologies](https://bayforest.ai/) | September 2023 - November 2024
 
 💻 **AI Research Intern** | [Arabesque AI](https://www.arabesque.com/ai/) | August 2021 - November 2021
 
@@ -58,7 +61,7 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 
 ## Countries
 
-🌐 **UK** (Current; ≈8 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
+🌐 **UK** (Current; ≈9 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
 
 :::
 
