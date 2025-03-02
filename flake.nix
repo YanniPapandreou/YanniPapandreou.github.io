@@ -43,10 +43,14 @@
             rWrapper = pkgs.rWrapper;
             radianWrapper = pkgs.radianWrapper;
             Rpackages = with pkgs.rPackages; [
+              IRkernel
               glue
               gt
+              languageserver
+              prettycode
               microbenchmark
               rmarkdown
+              styler
               tidyverse
             ];
             R-with-my-packages = rWrapper.override{ packages = Rpackages; };
@@ -57,7 +61,7 @@
             packages = with pkgs; [
               quarto
               # Python plus helper tools
-              (python311.withPackages my-python-packages)
+              (python312.withPackages my-python-packages)
               R-with-my-packages
               radian-with-my-packages
               markdown-oxide

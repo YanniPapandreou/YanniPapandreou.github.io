@@ -1,0 +1,261 @@
+---
+title: "Setting up Jupyter Lab with Additional Kernels in NixOS"
+date: "2025-03-02"
+categories: ["Nix", "Programming"]
+toc: true
+#toc-expand: false
+draft: false
+---
+
+Recently, I've been trying to experiment more with plotting in R using `ggplot2` and `plotly` for more interactive visualizations. As part of this experimentation I've tried to setup [Jupyter Lab](https://jupyter.org/) on my personal laptop where I have been daily driving [NixOS](https://nixos.org/) for the last few years. In the past, and during my PhD I was mainly coding in Python and using Jupyter with Python on NixOS was quite straight-forward. However, as I now am using R in my job I've tried to also setup my dev environment on my personal computer for R using Nix. My main workflow so far resolves around using [Radian](https://github.com/randy3k/radian) as my R console and coding with [Neovim](https://neovim.io/) as my IDE, tying the two together with [Zellij](https://zellij.dev/). However, as I've lately been experimenting more with plotting in R I've wanted to start using Jupyter Lab again for a more visual iterative REPL driven workflow. Achieving this took a bit more digging than I thought necessary. As such, I'm collating my notes here, mainly as a reference for my future self and in case anyone else is also struggling with this.
+
+# TLDR
+
+I will be outlining how I've setup a Nix Flake to create a dev environment with Jupyter Lab, and 2 custom kernels:
+
+1. A Python kernel with specific Python packages installed.
+2. An R kernel based on the `IRkernel` package with specific R packages installed.
+
+If you want to skip my explanation and just see the code the flake can be found on my GitHub [here](https://github.com/YanniPapandreou/jupy-nix/blob/main/templates/python-and-r/flake.nix) and it can be easily tried out by running:
+
+```
+nix flake new my-project -t github:YanniPapandreou/jupy-nix
+```
+This will setup the flake in a new directory `my-project`. You can then enable it by running `nix develop` or if using [Direnv](https://direnv.net/) via `direnv allow .`.
+
+# A custom Python kernel
+
+This is the most straight-forward of the 2 kernels and also the one for which I found the most material available online. For completeness I include one possible flake below:
+
+```nix
+# flake.nix
+{
+description = "Jupyter Env using Nix";
+
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+  outputs = { self, nixpkgs }: 
+    let
+      system = "x86_64-linux"; # Adjust for your architecture if needed
+      pkgs = import nixpkgs { inherit system; };
+      # Adjust which Python packages you want available in Jupyter
+      pythonPackages = ps: with ps; [
+        ipykernel
+        jupyterlab # provides Jupyter Lab
+        matplotlib
+        numpy
+      ];
+      pythonEnv = pkgs.python3.withPackages pythonPackages;
+    in {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          pythonEnv
+        ];
+
+        shellHook = ''
+          echo "Jupyter with Python kernel is ready. Run: 'jupyter lab' to launch."
+        '';
+      };
+    };
+}
+```
+
+Running `nix develop` in the directory with this flake and then `jupyter lab` will open Jupyter lab with a Python kernel which has access to **all and only** the packages specified in `pythonPackages`.
+
+# A R kernel based on `IRKernel`
+
+Adding an R kernel proved more challenging as there is much less material available online. The key is to properly copy over the required kernel files which Jupyter needs from the installed `IRkernel` package. Simply following the instructions on [`IRkernel`'s GitHub page](https://github.com/IRkernel/IRkernel?tab=readme-ov-file#installation) does not work in Nix. In particular, my first attempt was to use the following flake:
+
+```nix
+# flake.nix
+{
+  description = "Jupyter Env using Nix";
+
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+  outputs = { self, nixpkgs }: 
+    let
+      system = "x86_64-linux"; # Adjust for your architecture if needed
+      pkgs = import nixpkgs { inherit system; };
+      pythonPackages = ps: with ps; [
+        ipykernel
+        jupyterlab
+        numpy
+        matplotlib
+      ];
+      pythonEnv = pkgs.python3.withPackages pythonPackages;
+      rWrapper = pkgs.rWrapper;
+      # Include R packages desired here
+      RPackages = with pkgs.rPackages; [
+        IRkernel # To provide the Jupyter kernel
+        ggplot2
+      ];
+      rEnv = rWrapper.override {packages = RPackages; };
+    in {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          pythonEnv
+          rEnv
+        ];
+
+        shellHook = ''
+          echo "Open an R console and run 'IRkernel::installspec()' to install the kernel. Then run: 'jupyter lab' to launch."
+        '';
+      };
+    };
+}
+```
+After enabling this shell with `nix develop` I then opened an R console and ran `IRkernel::installspec()`. This lead to an error as the following shows:
+
+```{r, error=TRUE}
+IRkernel::installspec()
+```
+
+To dig into this error I ran `debug(IRkernel::installspec())` and went through each line of the underlying function one by one. The source code can be found by running `IRkernel::installspec` in an R console as well as found [here on GitHub](https://github.com/IRkernel/IRkernel/blob/master/R/installspec.r). The relevant line causing the issue was:
+```r
+write(toJSON(spec, pretty = TRUE, auto_unbox = TRUE), file = spec_path)
+```
+The value of `spec_path` is the `kernelspec/kernel.json` file mentioned in the error which is in a temporary directory under `/tmp`. The `spec` trying to be written to `spec_path` comes from these earlier lines in the source code:
+```r
+# make a kernelspec with the current interpreter's absolute path
+srcdir <- system.file('kernelspec', package = 'IRkernel')
+tmp_name <- tempfile()
+dir.create(tmp_name)
+file.copy(srcdir, tmp_name, recursive = TRUE)
+spec_path <- file.path(tmp_name, 'kernelspec', 'kernel.json')
+spec <- fromJSON(spec_path)
+spec$argv[[1]] <- file.path(R.home('bin'), 'R')
+spec$display_name <- displayname
+```
+In particular, the function `IRkernel::installspec` is copying the `kernelspec` directory from `srcdir` to a temporary file. Where is this `srcdir` located? To see let's run the relevant line in our R console:
+```{r}
+srcdir <- system.file('kernelspec', package = 'IRkernel')
+srcdir
+```
+From the above we can see that `srcdir` is the installed `IRkernel` in the Nix store. Since the Nix store is read-only it means that the copied directory is also read only and so we cannot write to `spec_path` and even worse we cannot clean up the temporary files when R exits as is hinted by the warning messages in the R console as well[^warnings].
+
+[^warnings]: These warnings do not show up in the rendered Quarto post here however they are shown during rendering on the terminal and look like `rm: cannot remove '/tmp/RtmpwpDMPU/file98da433fe3ad/kernelspec/kernel.json': Permission denied`
+
+We can see the permissions of the files in `srcdir` by running the following command in R:
+```{r}
+system(sprintf("ls -la %s", srcdir), intern = TRUE) |> cat(sep = "\n")
+```
+This shows that the files have only read permission. To fix this we can manually change the permission of the copied directory using `chmod -R u+w PATH_TO_TEMP_SPEC_DIR`. However, we can automate this and avoid having to run manual commands by using the flake's shellHook section as follows:
+```nix
+# flake.nix
+{
+  description = "Jupyter Env using Nix";
+
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+  outputs = { self, nixpkgs }: 
+    let
+      system = "x86_64-linux"; # Adjust for your architecture if needed
+      pkgs = import nixpkgs { inherit system; };
+      pythonPackages = ps: with ps; [
+        ipykernel
+        jupyterlab
+        matplotlib
+        numpy
+      ];
+      pythonEnv = pkgs.python3.withPackages pythonPackages;
+      # Where we want to install the IRkernel kernel files
+      irKernelDir = "$HOME/.local/share/jupyter/kernels/ir";
+      rWrapper = pkgs.rWrapper;
+      RPackages = with pkgs.rPackages; [
+        IRkernel
+        ggplot2
+      ];
+      rEnv = rWrapper.override {packages = RPackages; };
+    in {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          pythonEnv
+          rEnv
+        ];
+
+        shellHook = ''
+          echo "Setting up R kernel for Jupyter..."
+          # Ensure 'irKernelDir' exists
+          mkdir -p ${irKernelDir}
+          # Copy the files using interpolation
+          cp -r ${pkgs.rPackages.IRkernel}/library/IRkernel/kernelspec/* ${irKernelDir}/
+          # Add write permission
+          chmod -R u+w ${irKernelDir}
+          echo "Jupyter with R kernel is ready. Run: 'jupyter lab' to launch"
+        '';
+      };
+    };
+}
+```
+
+Running `nix develop` with this new flake will correctly install the kernel files to `$HOME/.local/share/jupyter/kernels/ir`. Launching Jupyter Lab should now show an additional R kernel as the following image shows:
+
+![Jupyter Lab with a Python and R kernel](jupyter-with-irkernel.png)
+
+The R kernel will have access to the packages included in `RPackages`. While this setup works it has the downside that it stores the kernel files in the `$HOME/.local/share/jupyter/kernels` directory. Since the `IRkernel` package is only provided in this dev shell this might cause issues when running Jupyter lab in another devshell. To get around this we can install the kernel files in our flake's directory and adjust the `JUPYTER_PATH` environment[^jupy-docs] variable in the shellHook to look for kernels in this new directory:
+```nix
+# flake.nix
+{
+  description = "Jupyter Env using Nix";
+
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+  outputs = { self, nixpkgs }: 
+    let
+      system = "x86_64-linux"; # Adjust for your architecture if needed
+      pkgs = import nixpkgs { inherit system; };
+      pythonPackages = ps: with ps; [
+        ipykernel
+        jupyterlab
+        matplotlib
+        numpy
+      ];
+      pythonEnv = pkgs.python3.withPackages pythonPackages;
+      # Where we want to install the IRkernel kernel files
+      KernelsDir = ".jupyter/kernels";
+      rWrapper = pkgs.rWrapper;
+      RPackages = with pkgs.rPackages; [
+        IRkernel
+        ggplot2
+      ];
+      rEnv = rWrapper.override {packages = RPackages; };
+    in {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          pythonEnv
+          rEnv
+        ];
+
+        shellHook = ''
+          echo "Setting up R kernel for Jupyter..."
+          # Ensure an 'ir' folder exists in 'KernelsDir':
+          mkdir -p "${KernelsDir}/ir"
+          # Copy the files using interpolation
+          cp -r ${pkgs.rPackages.IRkernel}/library/IRkernel/kernelspec/* "${KernelsDir}/ir"
+          # Add write permission
+          chmod -R u+w "${KernelsDir}/ir"
+          # set up Jupyter to look for kernels in the '.jupyter' dir:
+          export JUPYTER_PATH="$PWD/.jupyter"
+          echo "Jupyter with R kernel is ready. Run: 'jupyter lab' to launch"
+        '';
+      };
+    };
+}
+```
+This setup places the kernel files in a hidden `.jupyter` directory where your flake is located and adjusts the `JUPYTER_PATH` environment variable to include this directory when it looks for kernels.
+
+[^jupy-docs]: See Jupyter docs [here](https://jupyter-client.readthedocs.io/en/latest/kernels.html#kernel-specs) for more info on this environment variable.
+
+# Conclusion
+
+We now have a working Jupyter lab dev environment using a simple Nix Flake. In researching how to set up an R kernel for Jupyter in NixOS I also came across some other solutions which might be worth looking at:
+
+- The [Jupyenv](https://github.com/tweag/jupyenv) project: This used to work for me a few years ago but recently it has not be successfully building for me. It seems like the project is not as actively maintained as it used to be and it also has a lot of added complexity for more specialised use cases. For a simple devshell like I was interested in this was not needed.
+- There seems to be a Jupyter service in NixOS options together with a `services.jupyter.kernels` option (see [here](https://search.nixos.org/options?channel=unstable&show=services.jupyter.kernels&from=0&size=50&sort=relevance&type=packages&query=jupyter)). I struggled to figure out how to set this up and could not easily find good documentation for this option. If anyone does please reach out to me [here](mailto:ypapandreou7@gmail.com) to let me know!!
+
+I've also provided two templates in my `jupy-nix` GitHub repo [here](https://github.com/YanniPapandreou/jupy-nix). The default template is the simple Python + IRKernel setup described above. I've also added a second template `full` which provides a newer R kernel using the [`RKernel`](https://github.com/melff/RKernel) package. This is not packaged in Nixpkgs at the time of writing so I had to include it via some extra code. In a future blog post I intend to go through how this can be done for both R packages and Python packages. As an added bonus I also include a Rust kernel in the `full` template using the [`evcxr`](https://github.com/evcxr/evcxr) package. To use this full template one can run:
+
+```
+nix flake new my-project -t github:YanniPapandreou/jupy-nix#full
+```
