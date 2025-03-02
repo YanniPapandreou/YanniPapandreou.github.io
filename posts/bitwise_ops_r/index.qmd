@@ -1,7 +1,9 @@
 ---
 title: "Bitwise Logical Operations in R"
 date: "2024-09-20"
-categories: ["R", "Programming"]
+categories:
+  - R
+  - Programming
 toc: true
 #toc-expand: false
 draft: false

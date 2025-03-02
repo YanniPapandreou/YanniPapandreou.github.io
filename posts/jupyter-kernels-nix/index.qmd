@@ -1,7 +1,12 @@
 ---
 title: "Setting up Jupyter Lab with Additional Kernels in NixOS"
 date: "2025-03-02"
-categories: ["Nix", "Programming"]
+categories:
+  - Nix
+  - Programming
+  - R
+  - Python
+  - Rust
 toc: true
 #toc-expand: false
 draft: false
