@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/jupyter-kernels-nix/index.html",
       "/posts/bitwise_ops_r/index.html"
     ]
   }
