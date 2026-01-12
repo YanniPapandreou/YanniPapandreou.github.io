@@ -1,31 +1,17 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’ve just joined Moody’s RMS as a Climate Hazard Modeller on the Tropical Cyclone team.\nPreviously, I worked as a Quantitative Researcher at Bayforest Technologies.\nBefore that I completed my PhD in Mathematics at Imperial College London under the joint supervision of Dr Andrew Duncan and Dr Jon Cockayne. My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.\n\nPresent StatusExperienceEducationInterestsLanguagesCountries\n\n\n💻 Climate Hazard Modeller | Moody’s RMS | November 2024 - Present\n🏠 Based in London\n\n\n💻 Quantitative Researcher | Bayforest Technologies | September 2023 - November 2024\n💻 AI Research Intern | Arabesque AI | August 2021 - November 2021\n📖 Mathematics Tutor | Keystone Tutors | December 2019 - September 2023\n📖 Graduate Teaching Assistant (GTA) | Imperial College London | October 2019 - September 2023\n\n\n🎓 PhD in Mathematics | Imperial College London | October 2019 - September 2023\n🎓 MSc in Statistics | Imperial College London | September 2018 - September 2019\n🎓 BA in Mathematics | University of Cambridge | October 2015 - June 2018\n\n\n💻 Programming | Nix | Python | Julia | R\n📚 Mathematics | Bayesian Statistics | Physics-informed ML | Kernel-based methods\n\n\n💬 English (native) | Greek (conversational)\n\n\n🌐 UK (Current; ≈9 years) | Cyprus (≈11 years) | USA (≈10 years)\n\n\n\n Download my CV"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "YP",
     "section": "",
     "text": "Hi there, I’m Yanni 👋. I’m a statistician and you can find more about me here.\nI will be posting on topics I find interesting here. Any mistakes contained in such posts are mine and mine alone.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetting up Jupyter Lab with Additional Kernels in NixOS\n\n\n\n\n\n\nNix\n\n\nProgramming\n\n\nR\n\n\nPython\n\n\nRust\n\n\n\n\n\n\n\n\n\nMar 2, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBitwise Logical Operations in R\n\n\n\n\n\n\nR\n\n\nProgramming\n\n\n\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/jupyter-kernels-nix/index.html",
-    "href": "posts/jupyter-kernels-nix/index.html",
-    "title": "Setting up Jupyter Lab with Additional Kernels in NixOS",
-    "section": "",
-    "text": "Recently, I’ve been trying to experiment more with plotting in R using ggplot2 and plotly for more interactive visualizations. As part of this experimentation I’ve tried to setup Jupyter Lab on my personal laptop where I have been daily driving NixOS for the last few years. In the past, and during my PhD I was mainly coding in Python and using Jupyter with Python on NixOS was quite straight-forward. However, as I now am using R in my job I’ve tried to also setup my dev environment on my personal computer for R using Nix. My main workflow so far resolves around using Radian as my R console and coding with Neovim as my IDE, tying the two together with Zellij. However, as I’ve lately been experimenting more with plotting in R I’ve wanted to start using Jupyter Lab again for a more visual iterative REPL driven workflow. Achieving this took a bit more digging than I thought necessary. As such, I’m collating my notes here, mainly as a reference for my future self and in case anyone else is also struggling with this."
-  },
-  {
-    "objectID": "posts/jupyter-kernels-nix/index.html#footnotes",
-    "href": "posts/jupyter-kernels-nix/index.html#footnotes",
-    "title": "Setting up Jupyter Lab with Additional Kernels in NixOS",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThese warnings do not show up in the rendered Quarto post here however they are shown during rendering on the terminal and look like rm: cannot remove '/tmp/RtmpwpDMPU/file98da433fe3ad/kernelspec/kernel.json': Permission denied↩︎\nSee Jupyter docs here for more info on this environment variable.↩︎"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Journal Articles\n\nTheoretical Guarantees for the Statistical Finite Element Method\n\nSIAM/ASA Journal on Uncertainty Quantification\nAuthors: Yanni Papandreou, Jon Cockayne, Mark Girolami, Andrew B. Duncan\n🔗 PDF: A pdf version () can be found here.\n🔗 Code: The code for this paper is publicly available here.\n\n\n\n\n\nConference Papers\n\nRandom Grid Neural Processes for Parametric Partial Differential Equations\n\nProceedings of the 40th International Conference on Machine Learning\nAuthors: Arnaud Vadeboncoeur, Ieva Kazlauskaite, Yanni Papandreou, Fehmi Cirak, Mark Girolami, Ömer Deniz Akyildiz\n🔗 PDF: A version can be found here.\n\n\n\n\nTheses\n\nBayesian uncertainty quantification for PDE models: new perspectives on inference and dimension reduction\n\nPhD Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan, Dr Jon Cockayne\n🔗 PDF: A version can be found here.\n🔗 Code: Code associated with this thesis can be found at the following GitHub repositories:\n\nstatFEM_analysis\ngrassgp\n\n\nKernel-Based Inference Methods for Ordinary Differential Equations\n\nMSc Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan\n🔗 PDF/Code: A pdf version of this thesis, together with some code, can be found in the GitHub repository here."
   },
   {
     "objectID": "posts/bitwise_ops_r/index.html",
@@ -49,10 +35,24 @@
     "text": "Footnotes\n\n\nIndeed in many of the tracks and in computer science in general.↩︎\nSince \\(17 = 16 + 1 = 2^4 + 2^0\\).↩︎\nTo see the full docs run ?bitwAnd in an R console.↩︎\nWith the convention that the bit 1 represents TRUE and 0 represents FALSE.↩︎\nNote that the binary representation is left padded with zeros so the lengths match.↩︎\nThe output will be positive if and only if the \\(i^{\\text{th}}\\) binary digit was a 1.↩︎\nThe defintion of limit as floor(log2(n)) is simply 1 less than the number of binary digits in \\(n\\).↩︎"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "posts/jupyter-kernels-nix/index.html",
+    "href": "posts/jupyter-kernels-nix/index.html",
+    "title": "Setting up Jupyter Lab with Additional Kernels in NixOS",
     "section": "",
-    "text": "I’ve just joined Moody’s RMS as a Climate Hazard Modeller on the Tropical Cyclone team.\nPreviously, I worked as a Quantitative Researcher at Bayforest Technologies.\nBefore that I completed my PhD in Mathematics at Imperial College London under the joint supervision of Dr Andrew Duncan and Dr Jon Cockayne. My PhD research was focused on the Bayesian formulation of PDE-based models with an aim towards physics-informed machine learning. I have also worked on kernel-based methods for inference of complex models.\n\nPresent StatusExperienceEducationInterestsLanguagesCountries\n\n\n💻 Climate Hazard Modeller | Moody’s RMS | November 2024 - Present\n🏠 Based in London\n\n\n💻 Quantitative Researcher | Bayforest Technologies | September 2023 - November 2024\n💻 AI Research Intern | Arabesque AI | August 2021 - November 2021\n📖 Mathematics Tutor | Keystone Tutors | December 2019 - September 2023\n📖 Graduate Teaching Assistant (GTA) | Imperial College London | October 2019 - September 2023\n\n\n🎓 PhD in Mathematics | Imperial College London | October 2019 - September 2023\n🎓 MSc in Statistics | Imperial College London | September 2018 - September 2019\n🎓 BA in Mathematics | University of Cambridge | October 2015 - June 2018\n\n\n💻 Programming | Nix | Python | Julia | R\n📚 Mathematics | Bayesian Statistics | Physics-informed ML | Kernel-based methods\n\n\n💬 English (native) | Greek (conversational)\n\n\n🌐 UK (Current; ≈9 years) | Cyprus (≈11 years) | USA (≈10 years)\n\n\n\n Download my CV"
+    "text": "Recently, I’ve been trying to experiment more with plotting in R using ggplot2 and plotly for more interactive visualizations. As part of this experimentation I’ve tried to setup Jupyter Lab on my personal laptop where I have been daily driving NixOS for the last few years. In the past, and during my PhD I was mainly coding in Python and using Jupyter with Python on NixOS was quite straight-forward. However, as I now am using R in my job I’ve tried to also setup my dev environment on my personal computer for R using Nix. My main workflow so far resolves around using Radian as my R console and coding with Neovim as my IDE, tying the two together with Zellij. However, as I’ve lately been experimenting more with plotting in R I’ve wanted to start using Jupyter Lab again for a more visual iterative REPL driven workflow. Achieving this took a bit more digging than I thought necessary. As such, I’m collating my notes here, mainly as a reference for my future self and in case anyone else is also struggling with this."
+  },
+  {
+    "objectID": "posts/jupyter-kernels-nix/index.html#footnotes",
+    "href": "posts/jupyter-kernels-nix/index.html#footnotes",
+    "title": "Setting up Jupyter Lab with Additional Kernels in NixOS",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThese warnings do not show up in the rendered Quarto post here however they are shown during rendering on the terminal and look like rm: cannot remove '/tmp/RtmpwpDMPU/file98da433fe3ad/kernelspec/kernel.json': Permission denied↩︎\nSee Jupyter docs here for more info on this environment variable.↩︎"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Journal Articles\n\nTheoretical Guarantees for the Statistical Finite Element Method\n\nSIAM/ASA Journal on Uncertainty Quantification\nAuthors: Yanni Papandreou, Jon Cockayne, Mark Girolami, Andrew B. Duncan\n🔗 PDF: A pdf version () can be found here.\n🔗 Code: The code for this paper is publicly available here.\n\n\n\n\n\nConference Papers\n\nRandom Grid Neural Processes for Parametric Partial Differential Equations\n\nProceedings of the 40th International Conference on Machine Learning\nAuthors: Arnaud Vadeboncoeur, Ieva Kazlauskaite, Yanni Papandreou, Fehmi Cirak, Mark Girolami, Ömer Deniz Akyildiz\n🔗 PDF: A version can be found here.\n\n\n\n\nTheses\n\nBayesian uncertainty quantification for PDE models: new perspectives on inference and dimension reduction\n\nPhD Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan, Dr Jon Cockayne\n🔗 PDF: A version can be found here.\n🔗 Code: Code associated with this thesis can be found at the following GitHub repositories:\n\nstatFEM_analysis\ngrassgp\n\n\nKernel-Based Inference Methods for Ordinary Differential Equations\n\nMSc Thesis | Imperial College London\nSupervisors: Dr Andrew B. Duncan\n🔗 PDF/Code: A pdf version of this thesis, together with some code, can be found in the GitHub repository here."
   }
 ]
