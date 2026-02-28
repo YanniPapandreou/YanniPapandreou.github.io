@@ -16,7 +16,7 @@ about:
 
 ---
 
-I've just joined [Moody's RMS](https://www.rms.com/) as a Climate Hazard Modeller on the Tropical Cyclone team.
+I'm a Climate Hazard Modeller on the Tropical Cyclone team at [Moody's RMS](https://www.rms.com/).
 
 Previously, I worked as a Quantitative Researcher at [Bayforest Technologies](https://bayforest.ai/).
 
@@ -32,6 +32,8 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 🏠 Based in **London**
 
 ## Experience
+
+🌀 **Climate Hazard Modeller** | [Moody's RMS](https://www.rms.com/) | November 2024 - Present
 
 💻 **Quantitative Researcher** | [Bayforest Technologies](https://bayforest.ai/) | September 2023 - November 2024
 
@@ -61,7 +63,7 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 
 ## Countries
 
-🌐 **UK** (Current; ≈9 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
+🌐 **UK** (Current; ≈10 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
 
 :::
 
