@@ -27,13 +27,13 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 
 ## Present Status
 
-🌀 **Climate Hazard Modeller** | [Moody's RMS](https://www.rms.com/) | November 2024 - Present
+🌀 **Assistant Director (Climate Hazard Modeller)** | [Moody's RMS](https://www.rms.com/) | July 2026 - Present
 
 🏠 Based in **London**
 
 ## Experience
 
-🌀 **Climate Hazard Modeller** | [Moody's RMS](https://www.rms.com/) | November 2024 - Present
+🌀 **Modelling Analyst (Climate Hazard Modeller)** | [Moody's RMS](https://www.rms.com/) | November 2024 - July 2006
 
 💻 **Quantitative Researcher** | [Bayforest Technologies](https://bayforest.ai/) | September 2023 - November 2024
 
@@ -66,5 +66,3 @@ Before that I completed my PhD in Mathematics at [Imperial College London](https
 🌐 **UK** (Current; ≈10 years) | **Cyprus** (≈11 years) | **USA** (≈10 years)
 
 :::
-
-{{< downloadthis ./assets/CV.pdf label="Download my CV" type=primary dname="CV_Yanni_Papandreou">}}
